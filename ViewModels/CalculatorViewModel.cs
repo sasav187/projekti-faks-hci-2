@@ -47,14 +47,14 @@ namespace hci_projekat2.ViewModels
 
         public CalculatorViewModel()
         {
-            SelectedTheme = Theme.Light;
+            SelectedTheme = Theme.Dark;
             NumberCommand = new RelayCommand(AddNumber);
             OperationCommand = new RelayCommand(PerformOperation);
             ScientificCommand = new RelayCommand(PerformScientific);
             BitwiseCommand = new RelayCommand(PerformBitwise);
             BaseCommand = new RelayCommand(ChangeBase);
             ThemeCommand = new RelayCommand(ChangeTheme);
-            ThemeRefreshCommand = new RelayCommand((_) => ApplyTheme((Theme)SelectedTheme));
+            ThemeRefreshCommand = new RelayCommand((_) => ApplyTheme(theme: (Theme)SelectedTheme));
         }
 
         private void AddNumber(object parameter)

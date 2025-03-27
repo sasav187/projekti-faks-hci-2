@@ -42,12 +42,6 @@
         <KeyBinding Key="NumPad7" Command="{Binding NumberCommand}" CommandParameter="7"/>
         <KeyBinding Key="NumPad8" Command="{Binding NumberCommand}" CommandParameter="8"/>
         <KeyBinding Key="NumPad9" Command="{Binding NumberCommand}" CommandParameter="9"/>
-        <KeyBinding Key="A" Command="{Binding NumberCommand}" CommandParameter="A"/>
-        <KeyBinding Key="B" Command="{Binding NumberCommand}" CommandParameter="B"/>
-        <KeyBinding Key="C" Command="{Binding NumberCommand}" CommandParameter="C"/>
-        <KeyBinding Key="D" Command="{Binding NumberCommand}" CommandParameter="D"/>
-        <KeyBinding Key="E" Command="{Binding NumberCommand}" CommandParameter="E"/>
-        <KeyBinding Key="F" Command="{Binding NumberCommand}" CommandParameter="F"/>
 
         <KeyBinding Key="Add" Command="{Binding OperationCommand}" CommandParameter="+"/>
         <KeyBinding Key="Subtract" Command="{Binding OperationCommand}" CommandParameter="-"/>
@@ -57,7 +51,7 @@
         <KeyBinding Key="Escape" Command="{Binding OperationCommand}" CommandParameter="C"/>
         <KeyBinding Key="Decimal" Command="{Binding NumberCommand}" CommandParameter="."/>
     </Window.InputBindings>
-    
+
     <Grid>
 
         <ComboBox ItemsSource="{Binding Themes}" 
@@ -78,8 +72,9 @@
                     Margin="0,37,0,0" 
                     SelectionChanged="TabControl_SelectionChanged"
                     >
-            
-            <TabItem Header="Normalan">
+
+            <TabItem Header="Normalan"
+                     Height="30" Foreground="{DynamicResource AccentColor}" BorderBrush="#FFACACAC" Visibility="Visible" Background="{DynamicResource TabBackground}">
                 <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -128,7 +123,8 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Naučni">
+            <TabItem Header="Naučni"
+                     Height="30" Background="{DynamicResource BackgroundColor}" Foreground="{DynamicResource AccentColor}">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -174,9 +170,7 @@
             </TabItem>
 
             <TabItem Header="Programerski" 
-                     Height="22" 
-                     Margin="-2,0,-2,0" 
-                     VerticalAlignment="Bottom">
+                     Height="30" Background="{DynamicResource BackgroundColor}" Foreground="{DynamicResource AccentColor}">
                 <Grid Margin="10">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -201,9 +195,9 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.ColumnSpan="2">
-                        <RadioButton Content="DEC" Command="{Binding BaseCommand}" CommandParameter="10" GroupName="Base" IsChecked="True" Margin="0,60,10,0"/>
-                        <RadioButton Content="BIN" Command="{Binding BaseCommand}" CommandParameter="2" GroupName="Base" Margin="0,60,10,0"/>
-                        <RadioButton Content="HEX" Command="{Binding BaseCommand}" CommandParameter="16" GroupName="Base" Margin="0,60,10,0"/>
+                        <RadioButton Content="DEC" Command="{Binding BaseCommand}" CommandParameter="10" GroupName="Base" IsChecked="True" Margin="0,60,10,0" Foreground="{DynamicResource AccentColor}"/>
+                        <RadioButton Content="BIN" Command="{Binding BaseCommand}" CommandParameter="2" GroupName="Base" Margin="0,60,10,0" Foreground="{DynamicResource AccentColor}"/>
+                        <RadioButton Content="HEX" Command="{Binding BaseCommand}" CommandParameter="16" GroupName="Base" Margin="0,60,10,0" Foreground="{DynamicResource AccentColor}"/>
                     </StackPanel>
 
                     <UniformGrid Rows="5" Columns="4" Grid.ColumnSpan="2" Margin="0,81,0,0" Grid.RowSpan="2">
@@ -228,6 +222,6 @@
             </TabItem>
         </TabControl>
     </Grid>
-    
-    
+
+
 </Window>
